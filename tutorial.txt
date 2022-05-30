@@ -23,3 +23,9 @@ git push -f  (forza push)
 
 $ git remote add origin git@github.com:username/new_repo
 $ git push -u origin master
+
+
+
+// puntatori e passaggio per ref e puntatori
+
+https://www.youtube.com/watch?v=UWYnUGnChhA
