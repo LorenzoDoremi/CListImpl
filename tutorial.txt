@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=jvg4VtYEhKU
+
+COMPILATORE
+https://techdecodetutorials.com/download/#google_vignette
+
+
+// inizio
+
+
+git init
+
+git add %%varifile
+git commit -m "commento"
+git push
+
+
+// nel caso di errori con i nomi (rebasing ad esempio)
+
+git push -f  (forza push)
+
+
+// collegare a github il vostro repository
+
+$ git remote add origin git@github.com:username/new_repo
+$ git push -u origin master
