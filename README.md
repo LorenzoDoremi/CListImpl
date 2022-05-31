@@ -5,4 +5,5 @@ Here you can find:
 - a List implementation
 - a simple class implementation
 - a pi numeric solver
-- bisection 0 finder
+- bisection 0 finder (both recursive and iterative)
+- BST structure (Binary Search Tree)
