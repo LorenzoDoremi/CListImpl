@@ -19,6 +19,10 @@ double square(double v) {
   return v*v - 10;
 }
 
+double cube(double v) {
+  return v*v*v - 10;
+}
+
 
 
 
@@ -42,8 +46,9 @@ int main()
   */
 
 
-  double zero = recursiveZeroFinder(square, -100,100,1000);
-  zero = zeroFinder(square, -100,100, 100);
+ // double zero = recursiveZeroFinder(square, -100,100,1000);
+  // zero = zeroFinder(square, -100,100, 100);
+  double zero = regulaFalsi(cube, -5,5, 1000);
   cout << zero;
  return 0;
  

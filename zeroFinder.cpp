@@ -44,7 +44,7 @@ double zeroFinder(double (*f)(double), double a, double b, double interactions)
 }
 
 
-// calculates bisection of a function recursively
+// calculates a zero of a function recursively through bisection
 double recursiveZeroFinder(double (*f)(double), double a, double b, double interactions)
 { 
     double min = a;
@@ -58,4 +58,27 @@ double recursiveZeroFinder(double (*f)(double), double a, double b, double inter
       return recursiveZeroFinder(f,min,mid, interactions-1);
    }
    else  return recursiveZeroFinder(f,mid,max, interactions-1);
+}
+
+double regulaFalsi(double (*f)(double), double a, double b, double interactions) {
+
+
+    double min = a;
+   
+    double max = b;
+    // calcolo coefficiente angolare retta passante.
+    double coeff = ((*f)(max) - (*f)(min))/((max-min)); 
+  
+    double mid = min+abs((*f)(min)/coeff);
+
+    if((*f)(mid) == 0 || interactions == 0) {
+       return mid;
+    }
+    else if((*f)(min)*(*f)(mid) < 0) {
+
+      return regulaFalsi(f,min,mid, interactions-1);
+   }
+   else  return regulaFalsi(f,mid,max, interactions-1);
+
+
 }
