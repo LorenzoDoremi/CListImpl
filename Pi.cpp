@@ -1,4 +1,5 @@
 
+// calcolo approssimato di pigreco tramite serie di taylor
 double  Pi(int interactions) {
 
    double pi = 1;

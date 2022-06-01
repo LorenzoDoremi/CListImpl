@@ -1,12 +1,17 @@
 // Your First C++ Program
-
-#include "User.cpp"
-
-#include "integralCalculator.cpp"
 #include <cmath>
+#include "User.cpp"
+// calcolo integrale
+#include "integralCalculator.cpp"
+#include "equationSolver.cpp";
+// calcolo zeri funzione
 #include "zeroFinder.cpp"
+// classe albero binario
 #include "Tree.cpp"
+// algoritmi di ordinamento
 #include "sorting.cpp"
+// operazioni binarie 
+#include "binaryOperations.cpp"
 
 // input output
 #include <iostream>
@@ -51,14 +56,23 @@ void editPointer(int *pointer)
 int main()
 
 { 
+/* 
+ int a[] =  {0,0,0,0,0,0,1,1};
+ int b[] =  {0,0,0,0,0,0,0,1};
+  binaryAdd(a,b, 8); */
 
-  
+
+solutions equation = solveEquation2(3,-20,-5);
+cout << equation.s1 << "  " << equation.s2 ;
+
+
+ /*  
    // TEST ORDINAMENTO
    int l = 10;
    int array[l];
    randFill(array,l,100);
    selectionSort(array, l);
-   printArray(array,l); 
+   printArray(array,l);  */
 
   /* 
    // TEST PUNTATORI
