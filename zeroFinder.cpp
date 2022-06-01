@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-// calculates bisection of a function
+// calcolo iterativo per l'approssimazione zero di una funzione tramite bisezione
 double zeroFinder(double (*f)(double), double a, double b, double interactions)
 {
 
@@ -16,7 +16,7 @@ double zeroFinder(double (*f)(double), double a, double b, double interactions)
 
     while((*f)(mid) != 0 && interac > 0 ) {
 
-      // search for zero on left side 
+      // cerco se lo zero è a sinistra
       if((*f)(min) * (*f)(mid) < 0) {
 
          min = min;
@@ -25,7 +25,7 @@ double zeroFinder(double (*f)(double), double a, double b, double interactions)
         
 
       }
-      // search for zero on right side
+      // altrimenti a destra
       else {
          min = mid;
         max = max;
@@ -44,22 +44,25 @@ double zeroFinder(double (*f)(double), double a, double b, double interactions)
 }
 
 
-// calculates a zero of a function recursively through bisection
+// calcolo ricorsivo per l'approssimazione zero di una funzione tramite bisezione
 double recursiveZeroFinder(double (*f)(double), double a, double b, double interactions)
 { 
     double min = a;
     double max = b;
+    // punto medio
     double mid = (min + max) / 2;
    if((*f)(mid) == 0 || interactions == 0) {
       return mid;
    }
+   // cerco un punto medio a sinistra di quello attuale
    else if((*f)(min)*(*f)(mid) < 0) {
 
       return recursiveZeroFinder(f,min,mid, interactions-1);
    }
+   // altrimenti a destra
    else  return recursiveZeroFinder(f,mid,max, interactions-1);
 }
-
+// calcolo ricorsivo per l'approssimazione zero di una funzione tramite corde (regula Falsi)
 double regulaFalsi(double (*f)(double), double a, double b, double interactions) {
 
 
@@ -74,10 +77,12 @@ double regulaFalsi(double (*f)(double), double a, double b, double interactions)
     if((*f)(mid) == 0 || interactions == 0) {
        return mid;
     }
+    // cerco corda a sinistra
     else if((*f)(min)*(*f)(mid) < 0) {
 
       return regulaFalsi(f,min,mid, interactions-1);
    }
+   // altrimenti a destra
    else  return regulaFalsi(f,mid,max, interactions-1);
 
 

@@ -1,7 +1,7 @@
  #include <iostream>
 using namespace std;
 
-// node class for Binary Search Trees
+// Node class for Binary Search Trees
 class Node {
 
 public:
@@ -49,12 +49,12 @@ public:
 
        }
        else { 
-       // creo un nuovo nodo. 
-     
+       // assegno al puntatore corrente (inesistente) un puntatore ad un nodo. 
+       
        start = new Node(value) ;
       
        size++;
-       // qua funziona. (?)
+    
     
      
       
