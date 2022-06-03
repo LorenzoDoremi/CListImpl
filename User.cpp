@@ -1,16 +1,17 @@
 
 
+
 class User
 {
 private:
     int age;     // Attribute (int variable)
-    string name; // Attribute (string variable)                 // The class
+    std::string name; // Attribute (string variable)                 // The class
 public:          // Access specifier
     int getAge()
     {
         return age;
     }
-    string getName()
+    std::string getName()
     {
         return name;
     }
@@ -18,7 +19,7 @@ public:          // Access specifier
     {
         age = tage;
     }
-    void setName(string tname)
+    void setName(std::string tname)
     {
         name = tname;
     }
