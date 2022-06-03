@@ -1,6 +1,6 @@
 #include <cmath>
-#include <iostream>
-using namespace std;
+
+
 
 struct solutions {
     float s1, s2;

@@ -1,6 +1,6 @@
 // input output
 #include <iostream>
-using namespace std;
+
 //
 #include <time.h>
 
@@ -18,7 +18,7 @@ void printArray(int array[], int length)
 {
     for (int i = 0; i < length; i++)
     {
-        cout << array[i] << endl;
+       std::cout << array[i] << std::endl;
     }
 }
 

@@ -1,6 +1,6 @@
 // input output
 #include <iostream>
-using namespace std;
+
 
 
 // algoritmo in grado di sommare in binario due array rappresentanti numeri binari

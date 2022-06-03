@@ -1,6 +1,6 @@
 
 #include <iostream>
-using namespace std;
+
 
 // calcolo iterativo per l'approssimazione zero di una funzione tramite bisezione
 double zeroFinder(double (*f)(double), double a, double b, double interactions)
@@ -37,8 +37,7 @@ double zeroFinder(double (*f)(double), double a, double b, double interactions)
       interac--;
     }
 
-    cout << interac;
-    cout << " \n ------- \n";
+   
   
     return mid;
 }

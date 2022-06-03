@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std;
+
 
 class Node
 {
@@ -52,8 +52,8 @@ public:
         while (i < length)
         {
 
-            cout << curr->value;
-            cout << "\n-------\n";
+            std::cout << curr->value;
+            std::cout << "\n-------\n";
             curr = curr->Right;
             i++;
         };
@@ -66,8 +66,8 @@ public:
         while (i < length)
         {
 
-            cout << curr->value;
-            cout << "\n-------\n";
+            std::cout << curr->value;
+            std::cout << "\n-------\n";
             curr = curr->Left;
             i++;
         };
