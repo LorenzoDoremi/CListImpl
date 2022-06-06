@@ -44,7 +44,6 @@ void arrayChange(int array[10])
   }
 }
 
-
 int main()
 
 {
@@ -59,29 +58,30 @@ int main()
   */
 
   // TEST ORDINAMENTO
-  /*  int l = 10;
+    int l = 10;
    int array[l];
    randFill(array,l,100);
-   int* m = selectionSort(array, l);
-   printArray(m,l);  */
+  /*  int* m = selectionSort(array, l); */
+ /*   int* m = bubbleSort(array,l); 
+   printArray(m,l);  
+ */
+  /*   // TEST PUNTATORI
+    int p = 10;
+    int *pointer = &p;
+    // (by value, shouldn't change the actual pointer. but it changes if i called the other two functions before )
+    editPointerValue(pointer);
 
-/*   // TEST PUNTATORI
-  int p = 10;
-  int *pointer = &p;
-  // (by value, shouldn't change the actual pointer. but it changes if i called the other two functions before )
-  editPointerValue(pointer);
+    cout << *pointer << endl;
+    // (pointer)
+    editPointer(&pointer);
+    cout << *pointer << endl;
+    // (reference)
+    editPointerReference(pointer);
+    cout << *pointer << endl;
+    // (by value, shouldn't change the actual pointer. but it changes if i called the other two functions before )
+    editPointerValue(pointer);
 
-  cout << *pointer << endl;
-  // (pointer)
-  editPointer(&pointer);
-  cout << *pointer << endl;
-  // (reference)
-  editPointerReference(pointer);
-  cout << *pointer << endl;
-  // (by value, shouldn't change the actual pointer. but it changes if i called the other two functions before )
-  editPointerValue(pointer);
-
-  cout << *pointer << endl; */
+    cout << *pointer << endl; */
 
   // stampa 75 100 100
 
@@ -93,13 +93,11 @@ int main()
      cout << "VALUE"+std::to_string(b) << endl;
      cout << "VALUE"+std::to_string(c);  */
 
-
   // TEST APPROSSIMAZIONE ZERI
   /*  double zero = recursiveZeroFinder(square, -100,100,1000);  */
- /*  zero = zeroFinder(square, -100,100, 100); */
-  double zero = regulaFalsi(square, -5.0,0.0, 10);  
-  cout <<  zero << endl;
-
+  /*  zero = zeroFinder(square, -100,100, 100); */
+  /*   double zero = regulaFalsi(square, -5.0, 0.0, 10);
+    cout << zero << endl; */
 
   /*
   // TEST ALBERO DI RICERCA BINARIO

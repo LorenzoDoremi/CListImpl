@@ -50,3 +50,19 @@ int* selectionSort(int array[], int length)
     }
     return array;
 }
+
+int* bubbleSort(int array[], int length) {
+
+    for(int i = 0; i < length; i++) {
+        for (int j = 0; j<length-1; j++) {
+
+            if(array[j+1] < array[j]) {
+                swap(array[j], array[j+1]);
+            }
+
+          
+        }
+    }
+    return array;
+
+}
