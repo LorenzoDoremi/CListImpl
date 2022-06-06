@@ -31,7 +31,7 @@ void swap(int& one, int& two) {
     
 }
 // algoritmo di ordinamento selection sort
-void selectionSort(int array[], int length)
+int* selectionSort(int array[], int length)
 {
 
     for (int i = 0; i < length; i++)
@@ -48,4 +48,5 @@ void selectionSort(int array[], int length)
             }
         }
     }
+    return array;
 }

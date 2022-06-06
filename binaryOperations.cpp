@@ -44,6 +44,6 @@ void binaryAdd(int a[], int b[], int bits)
 
   for (int i = 0; i < bits; i++)
   {
-    cout << total[i];
+    std::cout << total[i];
   }
 }

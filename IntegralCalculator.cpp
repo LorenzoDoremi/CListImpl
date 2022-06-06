@@ -1,7 +1,3 @@
-
-#include <iostream>
-using namespace std;
-
 // calcola l'approssimazione dell'integrale definito di f tramite metodo dei rettangoli
 double integralCalculator(double (*f)(double), int min, int max, double interactions) {
     
