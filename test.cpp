@@ -98,7 +98,7 @@ int main()
   /*  double zero = recursiveZeroFinder(square, -100,100,1000);  */
  /*  zero = zeroFinder(square, -100,100, 100); */
   double zero = regulaFalsi(square, -5.0,0.0, 10);  
-  cout <<  << zero << endl;
+  cout <<  zero << endl;
 
 
   /*
