@@ -52,15 +52,15 @@ int main()
    int b[] =  {0,0,0,0,0,0,0,1};
     binaryAdd(a,b, 8); */
 
-  /*
+ 
   solutions equation = solveEquation2(3,-20,-5);
   cout << equation.s1 << "  " << equation.s2 ;
-  */
+ 
 
   // TEST ORDINAMENTO
-    int l = 10;
+  /*   int l = 10;
    int array[l];
-   randFill(array,l,100);
+   randFill(array,l,100); */
   /*  int* m = selectionSort(array, l); */
  /*   int* m = bubbleSort(array,l); 
    printArray(m,l);  
@@ -110,6 +110,7 @@ int main()
   }
 
   tree.print(tree.head); */
+  
 
   return 0;
 }
