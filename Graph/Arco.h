@@ -1,12 +1,11 @@
 #include <string>
-#pragma once
 
-class Nodo;
+
 class Arco
 {
 
-    Nodo *a;
-    Nodo *b;
+    Nodo* a;
+    Nodo* b;
     int cost;
 
 public:
@@ -19,18 +18,18 @@ public:
     std::string printArco() {
 
         
-        return std::to_string(a->getValue()) + " ---> " + std::to_string(b->getValue());
+        std::cout << std::to_string(a->getValue()) + " ---> " + std::to_string(b->getValue()) << std::endl;
     }
     int getCost() {
         return cost;
     }
    
-    /* Nodo getA() {
+     Nodo* getA() {
         return a;
 
     }
-    Nodo getB() {
+    Nodo* getB() {
         return b;
-    } */
+    } 
 };
 

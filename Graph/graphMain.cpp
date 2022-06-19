@@ -13,11 +13,15 @@ int main()
     }
 
     grafo.createArchi();
-    std::vector<Arco> archi = grafo.getArchi();
-    std::vector<Nodo> nodi = grafo.getNodi();
-
+    std::vector<Arco*> archi = grafo.getArchi();
+    std::vector<Nodo*> nodi = grafo.getNodi();
+    
+   
      for(int i= 0; i < archi.size(); i++) {
-        std::cout << archi[i].printArco() << std::endl;
+        
+       
+        Arco* currArco = archi[i];
+        std::cout << currArco->printArco() << std::endl;
     } 
 
     
