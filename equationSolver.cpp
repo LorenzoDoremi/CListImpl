@@ -17,12 +17,14 @@ solutions solveEquation2(float a, float b, float c) {
      if(delta < 0 ) {
          
         s.found = false; 
+       
      } 
      else {
         s.s1 = (-b + sqrt(delta))/(2*a);
         s.s2 = (-b - sqrt(delta))/(2*a);
         s.found = true;
-        return s; 
+       
      }
+     return s;
 
 }

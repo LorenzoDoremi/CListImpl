@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <vector>
 struct Type
 {
 
@@ -51,7 +51,7 @@ Attack
 electroshock = {.attackname = "electroshock", .damage = 20}, 
 codata = {.attackname = "codata", .damage = 10},
 electroBlast = {.attackname = "electroBlast", .damage = 40},
-scappa = {.attackname = "electroBlast", .damage = 0};
+scappa = {.attackname = "scappa", .damage = 0};
 
 // vari tipi 
 Type
@@ -64,8 +64,8 @@ elettrico = {  .dark = 0.5, .light = 2};
 
 
 // lista attacchi di pikachu
-Attack pikachuAttacks[] = {electroshock, codata};
-Attack raychuAttacks[] = {electroBlast, codata};
+std::vector<Attack> pikachuAttacks = {electroshock, codata};
+std::vector<Attack> raychuAttacks = {electroBlast, codata};
 
 
 

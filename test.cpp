@@ -44,6 +44,15 @@ void arrayChange(int array[10])
   }
 }
 
+
+void changePointer(int* p) {
+
+  int a = 100;
+  // perchè questo funziona?
+  *p = a;
+  // e questo no?
+  p = &a;
+}
 int main()
 
 {
@@ -53,8 +62,9 @@ int main()
     binaryAdd(a,b, 8); */
 
  
-  solutions equation = solveEquation2(3,-20,-5);
-  cout << equation.s1 << "  " << equation.s2 ;
+   solutions equation = solveEquation2(1,0,1);
+   cout << equation.found;
+   cout << equation.s1 << "  " << equation.s2 ; 
  
 
   // TEST ORDINAMENTO
@@ -65,21 +75,14 @@ int main()
  /*   int* m = bubbleSort(array,l); 
    printArray(m,l);  
  */
-  /*   // TEST PUNTATORI
-    int p = 10;
-    int *pointer = &p;
+    // TEST PUNTATORI
+   /*  int p = 10;
+    int* pointer = &p;
     // (by value, shouldn't change the actual pointer. but it changes if i called the other two functions before )
-    editPointerValue(pointer);
-
-    cout << *pointer << endl;
-    // (pointer)
-    editPointer(&pointer);
-    cout << *pointer << endl;
-    // (reference)
-    editPointerReference(pointer);
+    
     cout << *pointer << endl;
     // (by value, shouldn't change the actual pointer. but it changes if i called the other two functions before )
-    editPointerValue(pointer);
+    changePointer(pointer);
 
     cout << *pointer << endl; */
 
@@ -99,9 +102,9 @@ int main()
   /*   double zero = regulaFalsi(square, -5.0, 0.0, 10);
     cout << zero << endl; */
 
-  /*
+ 
   // TEST ALBERO DI RICERCA BINARIO
-  Tree tree = Tree();
+/*   Tree tree = Tree();
   for (int i = 0; i < 10; i++)
   {
     int r = rand() % 1000;
@@ -109,8 +112,10 @@ int main()
     tree.insert(r);
   }
 
+  tree.print(tree.head);
+  tree.clean(tree.head);
   tree.print(tree.head); */
-  
 
+  
   return 0;
 }

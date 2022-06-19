@@ -1,6 +1,5 @@
 // Your First C++ Program
 #include <cmath>
-#include "User.cpp"
 // input output
 
 /* #include "pokemonStruct.cpp" */
@@ -22,17 +21,12 @@ int main()
     
    
    // myPokemon = *myPokemon.getEvolution();
-     myPokemon.evolve();
-   
+    myPokemon.evolve();
   
-    myPokemon = Arceus;
-
-    Attack* attacks = myPokemon.getAttacks();
-
+    myPokemon.learnAttack(scappa);
     
     
-    
-    std::cout << "Vai " + myPokemon.getName()+"! attacca con "+(myPokemon.getAttacks()[0].attackname) << std::endl;
+    std::cout << "Vai " + myPokemon.getName()+"! attacca con "+(myPokemon.getAttacks()[2].attackname) << std::endl;
 
 
     

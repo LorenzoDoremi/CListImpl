@@ -38,12 +38,12 @@ public:
            
            // figlio dx
            if(value > start->value) {
-          cout << "right" << endl;
+         
              insertNode(start->right, value); 
            } 
            // figlio sx
            else {
-               cout << "left" << endl;
+             
              insertNode(start->left, value); 
            }
 
@@ -65,14 +65,27 @@ public:
 
   void print(Node* curr) {
       
-      Node x = *curr;
-      cout << x.value << endl; 
-      if(x.left) {
-          print(x.left);
+     
+      
+      if(curr->left) {
+          print(curr->left);
       }
-      if(x.right) {
-          print(x.right);
+      cout << curr->value << endl; 
+      if(curr->right) {
+          print(curr->right);
       }
+    
+
+  }
+  void clean(Node* curr) 
+  {
+      if(curr->left) {
+          clean(curr->left);
+      }
+      if(curr->right) {
+          clean(curr->right);
+      }
+      delete curr;
 
 
   }
