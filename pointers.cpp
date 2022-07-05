@@ -1,4 +1,4 @@
-
+#include <iostream>
 // passo il puntatore al puntatore (posso modificarlo)
 void editPointer(int **pointer)
 {
@@ -13,12 +13,24 @@ void editPointerReference(int *&pointer)
  
   *pointer = 100;
 }
-// passo una copia del puntatore (non posso modificarlo)
-void editPointerValue(int *pointer)
-{
 
-  int c = 200;
-  int *p = &c;
-  // since it's passed by value, should have any effect
-  pointer = p;
+
+
+
+double k(double &a) {
+ 
+
+  a = 20;
+
+  return a;
+}
+
+
+int main() {
+
+  double a = 15;
+  double* p = &a;
+  std::cout << k(*p) << std::endl;
+  std::cout << a;
+  return 0;
 }

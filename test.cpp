@@ -2,16 +2,16 @@
 #include <cmath>
 #include "User.cpp"
 // calcolo integrale
-#include "integralCalculator.cpp"
-#include "equationSolver.cpp"
+#include "Calcolo Numerico/integralCalculator.cpp"
+#include "Calcolo Numerico/equationSolver.cpp"
 // calcolo zeri funzione
-#include "zeroFinder.cpp"
+#include "Calcolo Numerico/zeroFinder.cpp"
 // classe albero binario
-#include "Tree.cpp"
+#include "Strutture Dati/Tree.cpp"
 // algoritmi di ordinamento
 #include "sorting.cpp"
 // operazioni binarie
-#include "binaryOperations.cpp"
+#include "Calcolo Numerico/binaryOperations.cpp"
 
 // input output
 #include <iostream>
@@ -62,9 +62,9 @@ int main()
     binaryAdd(a,b, 8); */
 
  
-   solutions equation = solveEquation2(1,0,1);
+/*    solutions equation = solveEquation2(1,0,1);
    cout << equation.found;
-   cout << equation.s1 << "  " << equation.s2 ; 
+   cout << equation.s1 << "  " << equation.s2 ;  */
  
 
   // TEST ORDINAMENTO
@@ -104,7 +104,7 @@ int main()
 
  
   // TEST ALBERO DI RICERCA BINARIO
-/*   Tree tree = Tree();
+   Tree tree = Tree();
   for (int i = 0; i < 10; i++)
   {
     int r = rand() % 1000;
@@ -112,9 +112,9 @@ int main()
     tree.insert(r);
   }
 
-  tree.print(tree.head);
+  tree.inOrder(tree.head);
   tree.clean(tree.head);
-  tree.print(tree.head); */
+
 
   
   return 0;
