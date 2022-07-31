@@ -73,7 +73,7 @@ double regulaFalsi(double (f)(double), double a, double b, double interactions) 
  
     double mid = min+fabs((f)(min)/coeff);
   
-   std::cout <<  (f)(min) << std::endl;
+   
     if((f)(mid) == 0 || interactions == 0) {
        return mid;
     }
@@ -89,4 +89,28 @@ double regulaFalsi(double (f)(double), double a, double b, double interactions) 
    }
 
 
+}
+
+
+// quando non funziona? quale problema potrebbe scaturire? 
+double newtonRaphson(double(f)(double), double min, double max, int iteractions)
+{
+
+    double xi = max;
+
+    while ( iteractions > 0 )
+    {
+        double coeff = (f(xi) - f(xi - 0.1)) / (xi - (xi - 0.1));
+        xi -= fabs(f(xi) / coeff);
+       
+     
+        if(fabs(f(xi)) < 0.01) {
+
+           
+            return xi;
+        }
+        iteractions--;
+    }
+
+    return xi;
 }

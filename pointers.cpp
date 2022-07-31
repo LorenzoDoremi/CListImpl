@@ -6,7 +6,7 @@ void editPointer(int **pointer)
   
   **pointer = 50;
 }
-// passo la referenza al puntatore (posso modificarlo)
+// passo la referenza al puntatore (posso modificare ciò a cui punta)
 void editPointerReference(int *&pointer)
 {
 

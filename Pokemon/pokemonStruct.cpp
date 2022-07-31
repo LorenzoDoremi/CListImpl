@@ -17,34 +17,7 @@ struct Attack
     short damage;
     Type type;
 };
-struct PokemonS
-{
 
-    std::string name;
-    short hp;
-    short def;
-    PokemonS *evolution;
-    Type type;
-    Attack attackList[2];
-    Attack* attacks = attackList;
-    
-    void evolve()
-    {
-        name = evolution->name;
-        hp = evolution->hp;
-        def = evolution->def;
-        type = evolution->type;
-        attacks = evolution->attackList;
-      
-    }
-    void learnAttacks(Attack* newattacks) {
-
-        for(short i = 0; i < 2; i++) {
-            attacks[i] = newattacks[i];
-        }
-
-    }
-};
 
 // vari attacchi 
 Attack 
@@ -66,31 +39,5 @@ elettrico = {  .dark = 0.5, .light = 2};
 // lista attacchi di pikachu
 std::vector<Attack> pikachuAttacks = {electroshock, codata};
 std::vector<Attack> raychuAttacks = {electroBlast, codata};
-
-
-
-// versione struct 
-PokemonS Raychu = {
-    .name = "Raychu",
-    .hp = 60,
-    .def = 15,
-    .type = {.name = "Electro"},
-    .attackList = {electroBlast, scappa}
-
-};
-
-
-
-PokemonS Pikachu = {
-    .name = "Pikachu",
-    .hp = 30,
-    .def = 10,
-    .evolution = &Raychu,
-    .type = {.name = "Electro"},
-    .attackList = {electroshock, codata}
-
-
-
-};
 
 

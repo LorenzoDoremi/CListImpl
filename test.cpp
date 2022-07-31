@@ -26,7 +26,7 @@ int n = 10;
 double square(double v)
 {
 
-  return v * v - 10;
+  return v * v - 5;
 }
 
 double cube(double v)
@@ -68,13 +68,18 @@ int main()
  
 
   // TEST ORDINAMENTO
-  /*   int l = 10;
+ /*     int l = 10;
    int array[l];
-   randFill(array,l,100); */
-  /*  int* m = selectionSort(array, l); */
- /*   int* m = bubbleSort(array,l); 
-   printArray(m,l);  
- */
+   randFill(array,l,100); 
+   selectionSort(array, l); 
+   int* n = bubbleSort(array,l);  */
+   // printArray(array,l);  
+
+
+   // array di zeri
+  /*  int a[10] = {};
+   printArray(a,10); */
+ 
     // TEST PUNTATORI
    /*  int p = 10;
     int* pointer = &p;
@@ -88,13 +93,15 @@ int main()
 
   // stampa 75 100 100
 
-  /*
+  
 
      // TEST CALCOLO INTEGRALE
-     double b = integralCalculator(square, 0,3,1000);
-     double c = integralCalculatorT(square, 0,3, 1000);
+     double b = integralCalculator(square, -5,5,100);
+     double c = integralCalculatorT(square, -5,5, 100);
+     double d = newtonRaphson(square, -5,5, 100);
      cout << "VALUE"+std::to_string(b) << endl;
-     cout << "VALUE"+std::to_string(c);  */
+     cout << "VALUE"+std::to_string(c) << endl;  
+     cout << "VALUE"+std::to_string(d) << endl; 
 
   // TEST APPROSSIMAZIONE ZERI
   /*  double zero = recursiveZeroFinder(square, -100,100,1000);  */
@@ -104,7 +111,7 @@ int main()
 
  
   // TEST ALBERO DI RICERCA BINARIO
-   Tree tree = Tree();
+  /*  Tree tree = Tree();
   for (int i = 0; i < 10; i++)
   {
     int r = rand() % 1000;
@@ -115,7 +122,7 @@ int main()
   tree.inOrder(tree.head);
   tree.clean(tree.head);
 
-
+ */
   
   return 0;
 }

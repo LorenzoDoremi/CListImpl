@@ -1,3 +1,5 @@
+#include <iostream>
+#include <cmath>
 // calcola l'approssimazione dell'integrale definito di f tramite metodo dei rettangoli
 double integralCalculator(double (*f)(double), int min, int max, double interactions) {
     
@@ -27,3 +29,4 @@ double integralCalculatorT(double (*f)(double), int min, int max, double interac
     }
    return value;
 }
+
