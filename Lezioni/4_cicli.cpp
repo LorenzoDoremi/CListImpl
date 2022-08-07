@@ -34,13 +34,22 @@ int main()
     std::cout << std::endl;
 
     
-    // fix!
+    // fix! con un contatore, so anche in che posizione sono arrivato!
+    // ma c'è ancora un problema. el è "virtuale" (passato per valore)!
     int counter = 0;
     for (int el : array3)
     {
         std::cout << el << " ";
+        el = 7;
         counter++;
     }
-    std::cout << counter << " ";
+     for (int el : array3)
+    {   
+        // stampa sempre zero!   el = 7 non fa nulla. 
+        std::cout << el << " ";
+       
+        
+    }
+
     return 0;
 }
