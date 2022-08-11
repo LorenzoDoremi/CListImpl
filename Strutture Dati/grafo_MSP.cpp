@@ -44,7 +44,7 @@ void minium_spanning_tree(int nodes[], int edges[][3], int node_num, int edge_nu
     sortMatrix(temp_edges, 5, 2);
   
     int sets[node_num][3] = {};
-    // creo i "nodi-set"  0 = nodo, 1 = pivot, 2 = dimensione set
+    // creo i "nodi-set"  sets[i][0] = nodo, sets[i][1] = pivot, sets[i][2] = dimensione set
     for (int i = 0; i < node_num; i++)
     {
         sets[i][0] = nodes[i];
@@ -57,13 +57,14 @@ void minium_spanning_tree(int nodes[], int edges[][3], int node_num, int edge_nu
   
 
     
-    // questa funzione assegna i pivot ai vari nodi-set
+    // per ciascun arco, cerco i nodi di cui è formato e i loro set. 
     for (int i = 0; i < edge_num; i++)
     {
        
-        // cerco il primo nodo
+        // salvo la tupla, perchè dovrò aumentarne la dimensione dopo (quando faccio un join)
         int *set1;
         int *set2;
+        // Cerco i set a cui appartengono i due nodi di ciascun arco
         for (int j = 0; j < node_num; j++)
         {
             // ho trovato il primo set
@@ -92,7 +93,7 @@ void minium_spanning_tree(int nodes[], int edges[][3], int node_num, int edge_nu
            
            
         }
-         
+        // sono diversi, quindi faccio un join
         else if (set1[2] >= set2[2])
             {
               
@@ -108,7 +109,7 @@ void minium_spanning_tree(int nodes[], int edges[][3], int node_num, int edge_nu
                 // aumento la dimensione
                 set2[2] += 1;
                 set1[2] = set2[2];
-                // cambio il pivot del set più piccolo
+                // cambio il pivot del set gipiù piccolo
                 set1[1] = set2[1];
             }
         
