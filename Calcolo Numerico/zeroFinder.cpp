@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 // calcolo iterativo per l'approssimazione zero di una funzione tramite bisezione
-double zeroFinder(double (*f)(double), double a, double b, double interactions)
+double zeroFinder(double (f)(double), double a, double b, double interactions)
 {
 
    double min = a;
@@ -10,11 +10,11 @@ double zeroFinder(double (*f)(double), double a, double b, double interactions)
    double mid = (min + max) / 2;
    int interac = interactions;
 
-   while ((*f)(mid) != 0 && interac > 0)
+   while ((f)(mid) != 0 && interac > 0)
    {
 
       // cerco se lo zero è a sinistra
-      if ((*f)(min) * (*f)(mid) < 0)
+      if ((f)(min) * (*f)(mid) < 0)
       {
 
          min = min;
@@ -68,7 +68,7 @@ double regulaFalsi(double (f)(double), double a, double b, double interactions) 
    
     double max = b;
   
-    // calcolo coefficiente angolare retta passante.  fabs vs abs
+    // calcolo coefficiente angolare retta passante.  fabs vs abs (float absolute)
     double coeff = ((f)(max) - (f)(min))/((max-min)); 
  
     double mid = min+fabs((f)(min)/coeff);
