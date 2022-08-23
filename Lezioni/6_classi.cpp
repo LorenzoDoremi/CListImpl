@@ -91,24 +91,38 @@ int main() {
 
     // una classe molto utile : vector
     std::vector<int> vector = {1,2,3};
+
+
+    
     vector.push_back(6);
+    vector.emplace_back(5);
+    
+    // la differenza tra push ed emplace, è che push crea al momento una nuova istanza e poi la inserisce.
+    // emplace crea una nuova istanza all'interno dello spazio. Sono sottigliezze che a noi non interessano particolarmente ora.
+
     vector.pop_back();
     vector.emplace ( vector.begin()+2, 200 );
     vector.emplace ( vector.end(), 500 );
     
-    for(int el:vector) {
-        std::cout << el << " - ";
-    }
-    std::cout << "\n";
+   
+   
+   
+    // un vettore può anche essere vuoto all'inizio ovviamente. 
+    std::vector<int> empty_vector = {};
+    empty_vector.emplace_back(15);
+   
 
-
+    // un vettore può anche essere ritornato. Molto più comodo degli array classici
     std::vector vettore = ritornaVettore(1);
     std::cout << "VETTORE =" << vettore.at(0) << std::endl;
 
+
+
+    // scope delle classi. questo funziona
     Node mioNodo = ritornaNodo();
     std::cout << mioNodo.getValue() << std::endl;
  
-    // questo è sbagliato!!!!!!!!
+    // questo è sbagliato!!!!!!!! i puntatori sono odiosi...
     int* k = ritornaValoreNodo();
     std::cout << k << std::endl;
 
