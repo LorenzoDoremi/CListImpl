@@ -1,101 +1,75 @@
- #include <iostream>
-using namespace std;
-
-// Node class for Binary Search Trees
-class Node {
-
-public:
-    Node* left;
-    Node* right;
-    int value;
-    Node(int v) {
-       value = v;
-       left = NULL;
-       right = NULL;
-    }
-    Node() {
-
-    }
-
-};
-// Binary Search Tree
- class Tree {
+#include <iostream>
+// una versione del Binary Search Tree più elegante. (ogni nodo è un sottoalbero)
+class BST {
   
-   public:
-   Node* head;
-   int size = 0;
-   void insert(int value) {
+  private:
+  BST* left = nullptr; 
+  BST* right = nullptr;
+  int value = NULL;
 
-       insertNode(head, value);
+
+  public: 
+  BST() {
+
+  }
+  BST(int v) {
+      value = v;
+  }
+  ~BST() {
+     std::cout<< "nodo cancellato"+std::to_string(value) << "\n";
    }
- 
-   void insertNode(Node*& start, int value) {
+  int getValue() {
+    return value;
+  }
+  void insert(int v) {
+      
+      if(value) {
+      if(v >= value) {
+        if(right) {
+            right->insert(v);
+        }
+        else right = new BST(v);
+      }
+      else {
+        if(left) {
+            left->insert(v);
+        }
+        else {
+            left = new BST(v);
+        }
+      }
+  } else  {
+  
+    value = v;
+  }
+  }
 
-       // se il nodo esiste già, guardo i figli
-       if(start) {
-           
-         
-           
-           // figlio dx
-           if(value > start->value) {
-         
-             insertNode(start->right, value); 
-           } 
-           // figlio sx
-           else {
-             
-             insertNode(start->left, value); 
-           }
-
-       }
-       else { 
-       // assegno al puntatore corrente (inesistente) un puntatore ad un nodo. 
+  void inOrder() {
+     if(left) {
        
-       start = new Node(value) ;
-      
-       size++;
-    
-    
-     
-      
-
-       }
-   
-   }
-
-
-
-
-  void inOrder(Node* curr) {
-      
-     
-      
-      if(curr->left) {
-          inOrder(curr->left);
-      }
-      cout << curr->value << endl; 
-      if(curr->right) {
-          inOrder(curr->right);
-      }
-    
-
+        left->inOrder();
+       
+     }
+     std::cout << value << std::endl;
+     if(right) {
+        
+        right->inOrder();
+     }
   }
-  void clean(Node* curr) 
-  {
-      if(curr->left) {
-          clean(curr->left);
-      }
-      if(curr->right) {
-          clean(curr->right);
-      }
-      delete curr;
-
-
-  }
-
-
-
-   
-
-
 };
+
+
+
+int main() {
+
+    BST x = BST();
+    x.insert(10);
+    x.insert(23);
+    x.insert(3);
+    x.insert(12);
+    x.insert(8);
+    x.inOrder();
+
+   
+    return 0;
+}

@@ -13,7 +13,7 @@ void swapArray(int *a, int *b, int size)
         b[i] = temp;
     }
 }
-
+// questo metodo mette in ordine una matrice in base ad un valore chiave (peso degli archi)
 void sortMatrix(int matrix[][3], int num_rows, int key_position)
 {
 
@@ -28,7 +28,7 @@ void sortMatrix(int matrix[][3], int num_rows, int key_position)
         }
     }
 }
-
+// questo metodo è estremamente complicato, e guardatelo solo se volete complicarvi la vita
 void minium_spanning_tree(int nodes[], int edges[][3], int node_num, int edge_num)
 {
     
@@ -44,7 +44,8 @@ void minium_spanning_tree(int nodes[], int edges[][3], int node_num, int edge_nu
     sortMatrix(temp_edges, 5, 2);
   
     int sets[node_num][3] = {};
-    // creo i "nodi-set"  sets[i][0] = nodo, sets[i][1] = pivot, sets[i][2] = dimensione set
+    // creo dei "nodi-set" particolari, che contengono il nodo, il suo pivot e la dimensione del set  
+    // sets[i][0] = nodo, sets[i][1] = pivot, sets[i][2] = dimensione set
     for (int i = 0; i < node_num; i++)
     {
         sets[i][0] = nodes[i];
@@ -88,7 +89,7 @@ void minium_spanning_tree(int nodes[], int edges[][3], int node_num, int edge_nu
          if (set1[1] == set2[1])
         {
             // hanno lo stesso pivot, quindi sono nello stesso set.
-            // questo edge non mi interessa
+            // questo edge non mi interessa (con pesi negativi, bisogna inventarsi altro!)
             temp_edges[i][2] = -1;
            
            

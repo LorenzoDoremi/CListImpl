@@ -1,10 +1,11 @@
 #include <iostream>
-// una versione del Binary Search Tree più elegante. (ogni nodo è un sottoalbero)
+#include <memory>
+// una versione del Binary Search Tree sicuro a livello di memoria
 class BST {
   
   private:
-  BST* left = nullptr; 
-  BST* right = nullptr;
+  std::unique_ptr<BST> left; 
+  std::unique_ptr<BST> right; 
   int value = NULL;
 
 
@@ -15,6 +16,9 @@ class BST {
   BST(int v) {
       value = v;
   }
+  ~BST() {
+     std::cout<< "nodo cancellato"+std::to_string(value) << "\n";
+   }
   int getValue() {
     return value;
   }
@@ -25,14 +29,14 @@ class BST {
         if(right) {
             right->insert(v);
         }
-        else right = new BST(v);
+        else right = std::make_unique<BST>(v);
       }
       else {
         if(left) {
             left->insert(v);
         }
         else {
-            left = new BST(v);
+            left = std::make_unique<BST>(v);
         }
       }
   } else  {
@@ -60,11 +64,13 @@ class BST {
 int main() {
 
     BST x = BST();
+    if(true) {
     x.insert(10);
     x.insert(23);
     x.insert(3);
     x.insert(12);
     x.insert(8);
+    }
     x.inOrder();
 
    
