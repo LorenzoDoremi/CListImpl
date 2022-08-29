@@ -12,7 +12,7 @@ public:
     {
 
         hash_table = std::vector<t>(size);
-    git}
+    }
     void hashInsert(t el)
     {
 
