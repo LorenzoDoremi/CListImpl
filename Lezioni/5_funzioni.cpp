@@ -30,7 +30,7 @@ int eseguiFunzione(int(f1)(int, int), int a, int b)
     return c;
 }
 
-int *ritornaArraySbagliato(int l)
+int* ritornaArraySbagliato(int l)
 {
 
     int array[l];
@@ -42,9 +42,9 @@ int *ritornaArraySbagliato(int l)
     return array;
 }
 
-int *ritornaArrayGiusto(int l)
+int* ritornaArrayGiusto(int l)
 {
-
+    // new implica che salviamo sull'heap (globalmente) questo array. però dovremo anche cancellarlo noi!
     int *array = new int[l];
     for (int i = 0; i < l; i++)
     {

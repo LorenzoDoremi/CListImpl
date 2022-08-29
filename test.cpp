@@ -1,6 +1,6 @@
 // Your First C++ Program
 #include <cmath>
-#include "User.cpp"
+
 // calcolo integrale
 #include "Calcolo Numerico/integralCalculator.cpp"
 #include "Calcolo Numerico/equationSolver.cpp"

@@ -66,3 +66,55 @@ int* bubbleSort(int array[], int length) {
     return array;
 
 }
+// algoritmo countingSort, uno degli algoritmi di ordinamento per numeri non-general purpose più veloci che esistano
+// implementazione per numeri positivi. 
+int* countingSort(int array[], int length) {
+
+    int max = 0;
+    for(int i = 0; i < length; i++) {
+        if( array[i] > max) {
+            max = array[i];
+        }
+    }
+    int counter[max+1] = {};
+    for(int i = 0; i < length; i++) {
+        counter[array[i]]++;
+    }
+   
+    // insert 
+
+    int index = 0; 
+    for(int i = 0; i < max+1; i++) {
+       // std::cout << counter[i] << "-";
+       if(counter[i] > 0) {
+        for(int j = 0; j < counter[i]; j++) {
+            array[index] = i;
+            index++;
+        }
+       }
+
+    }
+
+    return array;
+
+}
+
+
+
+int main() {
+
+    
+    int array[] = {3,7,34,7,3,12,199,0,2,0,1,2};
+
+    countingSort(array, sizeof(array)/sizeof(array[0]));
+
+    for(int i : array) {
+        std::cout << i << " - ";
+    }
+
+  
+
+
+
+    return 0;
+}

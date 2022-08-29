@@ -25,6 +25,12 @@ $ git remote add origin git@github.com:username/new_repo
 $ git push -u origin master
 
 
+// utilizzare branch per creare dei coding paralleli
+
+git branch "Nome branch" -> creare branch
+
+git checkout "nome branch  -> cambiare branch corrente
+
 
 // puntatori e passaggio per ref e puntatori
 

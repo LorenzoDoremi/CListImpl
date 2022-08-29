@@ -74,7 +74,7 @@ Node ritornaNodo() {
 // questa funzione è sbagliata. il nodo viene cancellato. Non posso far uscire un puntatore ad essa. 
 int* ritornaValoreNodo() {
 
-
+   // di nuovo manca il new!
    Node nodo = Node(10, 666);
    return &nodo.public_value;
 

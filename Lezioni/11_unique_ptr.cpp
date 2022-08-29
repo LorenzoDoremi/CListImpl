@@ -49,6 +49,7 @@ int main() {
     Nodo a = Nodo(10);
     std::unique_ptr<V> valore;
     V* valore_brutto;
+    // creiamo un ciclo giusto per cambiare scope
     if(true) {
      valore = a.ritornaPuntatoreSmart();
      valore_brutto = a.ritornaPuntatore();

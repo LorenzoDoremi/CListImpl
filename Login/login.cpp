@@ -39,9 +39,11 @@ void logscreen()
         // open file database
         std::ifstream myfile;
 
-        myfile.open("test.txt"); // cerca la fine
-
+        myfile.open("test.txt"); 
+      
         std::string check;
+
+          // cerco username e password. getline va a capo nelle righe
         while (std::getline(myfile, check))
         {
             if (check.find(username) != std::string::npos)
@@ -50,12 +52,14 @@ void logscreen()
                 break;
             }
         }
-
+        // nella stessa riga dell'username controllo se trovo anche la stringa password 
         if (check.find(pHasher(password)) != std::string::npos)
         {
 
             myfile.close();
-          
+            
+
+            // finisce il ciclo. esco dalla funziona logscreen
            
         }
         else
