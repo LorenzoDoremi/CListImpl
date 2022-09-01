@@ -1,6 +1,6 @@
 // input output
 #include <iostream>
-
+#include <limits>
 //
 #include <time.h>
 
@@ -30,8 +30,8 @@ void swap(int& one, int& two) {
     two = t;
     
 }
-// algoritmo di ordinamento selection sort
-int* selectionSort(int array[], int length)
+// algoritmo di ordinamento exchange  sort
+int* exchangeSort(int array[], int length)
 {
 
     for (int i = 0; i < length; i++)
@@ -66,6 +66,32 @@ int* bubbleSort(int array[], int length) {
     return array;
 
 }
+
+// algoritmo di ordinamento exchange sort (numeri interi positivi)
+int* selectionSort(int array[], int length)
+{
+
+    for (int i = 0; i < length; i++)
+    {
+        int min = std::numeric_limits<float>::infinity();
+        int index = i;
+        for (int j = i; j < length; j++)
+        {
+            if (array[j] < min)
+            {
+                min = array[j];
+                index = j;
+
+                
+            }
+        }
+        swap(array[i], array[index]);
+    }
+    return array;
+}
+
+
+
 // algoritmo countingSort, uno degli algoritmi di ordinamento per numeri non-general purpose più veloci che esistano
 // implementazione per numeri positivi. 
 int* countingSort(int array[], int length) {
@@ -105,8 +131,8 @@ int main() {
 
     
     int array[] = {3,7,34,7,3,12,199,0,2,0,1,2};
-
-    countingSort(array, sizeof(array)/sizeof(array[0]));
+    selectionSort(array, sizeof(array)/sizeof(array[0]));
+    // countingSort(array, sizeof(array)/sizeof(array[0]));
 
     for(int i : array) {
         std::cout << i << " - ";
