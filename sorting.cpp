@@ -67,7 +67,7 @@ int* bubbleSort(int array[], int length) {
 
 }
 
-// algoritmo di ordinamento exchange sort (numeri interi positivi)
+// algoritmo di ordinamento exchange sort 
 int* selectionSort(int array[], int length)
 {
 
