@@ -16,10 +16,10 @@ int main() {
     float divisione_float = i2/j2;
 
 
-    std::cout << divisione << std::endl;
-    std::cout << divisione2 << std::endl;
+    std::cout << divisione << '\n';
+    std::cout << divisione2 << '\n';
     // oh finalmente funziona!!
-    std::cout << divisione_float << std::endl;
+    std::cout << divisione_float << '\n';
 
 
     i++;
@@ -27,7 +27,37 @@ int main() {
     i *= 3; //  i = i*3
     i /= 3; // i = i/3
     i %= 3; // i = i%3 
-    std::cout << i << std::endl;
+    std::cout << i << '\n';
+
+
+    // operatore condizionale if
+
+    int numero = 100;
+    short numero_piccolo = 1;
+    if(numero < 50) {
+        std::cout << "MOLTO GRANDEH!" << '\n';
+    }
+    if(numero > 50 || numero < 100) {
+         std::cout << "Grande ma non troppoh" << '\n';
+    }
+    if(numero > 50 && numero_piccolo < 10) {
+         std::cout << "sono molto distanti questi numeri!" << '\n';
+    }
+
+    // operatore condizionale switch
+    switch (numero)
+    {
+    case 100:
+        std::cout << "numero è uguale a 100";
+        break;
+    case 50:
+        std::cout << "switch è uguale a 50";
+        break;
+    default:
+        break;
+    }
+
+
     return 0;
 }
 
