@@ -1,4 +1,3 @@
-#include "../util.h"
 #include <cmath>
 #include <random>
 #include <iostream>
@@ -27,17 +26,17 @@ double  Pi(int interactions) {
 
 double monteCarloPi(float n) {
 
-   float in = 0;
-   float out = 0;
+   int in = 0;
+  
    for(int i = 0; i < n; i++) {
 
       auto x = rand() / (RAND_MAX + 1.);
       auto y = rand() / (RAND_MAX + 1.);
      
-      if(sqrt(x*x + y*y) > 1) {
-        out++;
+      if(sqrt(x*x + y*y) < 1) {
+        in++;
       }
-      else in++;
+      
 
    }
 
