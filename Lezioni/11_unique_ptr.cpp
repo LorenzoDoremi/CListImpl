@@ -9,24 +9,23 @@ class V {
       val = x;
    }
   ~V() {
-     std::cout<< "V cancellato"+std::to_string(val) << "\n";
+     std::cout<< "V cancellato"+std::to_string(val) << " \n";
    }
   
    int val;
 
 };
-
+// classe con due metodi che ritornano puntatori
 class Nodo {
    
    public:
-   Nodo(int n) {
-
-   
+   Nodo() {
 
    }
    // questo metodo ritorna un puntatore smart che si auto cancellerà una volta che il nodo è distrutto. 
    std::unique_ptr<V> ritornaPuntatoreSmart() {
         
+        // creo un puntatore e poi lo passo...ma lo scope prima non funzionava!
         auto oggetto = std::make_unique<V>(50);
         return oggetto;
    }
@@ -46,7 +45,9 @@ class Nodo {
 int main() {
 
     
-    Nodo a = Nodo(10);
+    Nodo a = Nodo();
+
+    // oggetti V
     std::unique_ptr<V> valore;
     V* valore_brutto;
     // creiamo un ciclo giusto per cambiare scope
@@ -58,6 +59,7 @@ int main() {
     std::cout << valore_brutto->val << "\n";
     std::cout << "fine!" << "\n";
 
+   // non viene mai stampato V cancellato 10!!!
     
     return 0;
 }
