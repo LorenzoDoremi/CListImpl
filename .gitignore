@@ -1,2 +1,4 @@
 private/
 *.exe
+*/*.exe
+*/tempCodeRunnerFile.cpp

@@ -2,7 +2,7 @@
 #include <vector>
 
 // questo algoritmo risolve il knapsack problem utilizzando programmazione dinamica e un albero di decisione.
-// è un po' complesso da capire ma molto utile per la risoluzione di problemi avanzati. 
+// è un po' complesso da capire ma molto utile per la risoluzione di problemi avanzati.
 // (a me ci sono volute 2 ore, conoscendo già la tecnica!!)
 
 struct item
@@ -30,7 +30,7 @@ void sortValue(item items[], int length)
     }
 }
 // items = lista di oggetti da valutare
-// solution = dove salvare l'insieme di oggetti 
+// solution = dove salvare l'insieme di oggetti
 // curr_solution = un vettore che contiene la miglior soluzione per ora
 // length = lunghezza dell'array
 // curr_index = attuale indice nell'array per la scelta successiva
@@ -54,34 +54,26 @@ void knapsack(item items[], std::vector<item> &solution, std::vector<item> curr_
         {
             maxgain = new_gain;
             solution = curr_solution;
-            // lo aggiungo, perchè nel caso fosse l'ultima chiamata ricorsiva, non potrei aggiungerlo sotto. 
-
-            for(item i : solution) {
-                std::cout<< i.name << " - ";
-            }
-            std::cout << '\n';
+            // lo aggiungo, perchè nel caso fosse l'ultima chiamata ricorsiva, non potrei aggiungerlo sotto.
             solution.emplace_back(items[curr_index]);
-           
         }
     }
     // se il nuovo oggetto aggiunto sta nello zaino,allora continuo con entrambi i rami
-    if (new_weight <= maxw && curr_index < length-1 )
+    if (new_weight <= maxw && curr_index < length - 1)
     {
-      
 
-       // non lo aggiungo: ramo "0"
-       knapsack(items, solution, curr_solution, length, curr_index + 1, curr_gain, curr_weight, maxw, maxgain);
-       // aggiungo l'oggetto: ramo "1"
-       curr_solution.emplace_back(items[curr_index]);
-       knapsack(items, solution, curr_solution, length, curr_index + 1, new_gain, new_weight, maxw, maxgain);
-       
+        // non lo aggiungo: ramo "0"
+        knapsack(items, solution, curr_solution, length, curr_index + 1, curr_gain, curr_weight, maxw, maxgain);
+        // aggiungo l'oggetto: ramo "1"
+        curr_solution.emplace_back(items[curr_index]);
+        knapsack(items, solution, curr_solution, length, curr_index + 1, new_gain, new_weight, maxw, maxgain);
     }
     // altrimenti non aggiungo l'oggetto e considero solo il ramo vuoto
-    else if(curr_weight <= maxw && curr_index < length-1) {
-       // non lo aggiungo: ramo "0"
-       knapsack(items, solution, curr_solution, length, curr_index + 1, curr_gain, curr_weight, maxw, maxgain);
+    else if (curr_weight <= maxw && curr_index < length - 1)
+    {
+        // non lo aggiungo: ramo "0"
+        knapsack(items, solution, curr_solution, length, curr_index + 1, curr_gain, curr_weight, maxw, maxgain);
     }
-    
 }
 
 int main()
@@ -105,7 +97,6 @@ int main()
     int maxgain = 0;
     std::vector<item> solution = std::vector<item>();
 
-    
     knapsack(items, solution, std::vector<item>(), size, 0, 0, 0, maxw, maxgain);
 
     std::cout << maxgain << '\n';
