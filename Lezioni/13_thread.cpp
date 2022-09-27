@@ -4,7 +4,7 @@
 #include <mutex>
 int TIME = 0;
 std::mutex mutex;
-// The function we want to execute on the new thread.
+// funzione eseguita dai thread
 void task1(std::string name)
 {   
     while(TIME < 10) {
