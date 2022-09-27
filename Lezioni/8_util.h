@@ -15,7 +15,14 @@ namespace goniometria
 
 namespace armi_COD
 {
+    class Proiettile
+    {
 
+    private:
+        int danno;
+        int dimensioni;
+        int costo;
+    };
     class Arma
     {
     };
@@ -32,15 +39,6 @@ namespace armi_COD
         {
             m_proiettili.emplace_back(n);
         }
-    };
-
-    class Proiettile
-    {
-
-    private:
-        int danno;
-        int dimensioni;
-        int costo;
     };
 
     void ricarica(Arma a, Caricatore b)

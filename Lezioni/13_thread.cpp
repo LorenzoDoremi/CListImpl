@@ -1,16 +1,18 @@
 #include <string>
 #include <iostream>
 #include <thread>
-
+#include <mutex>
 int TIME = 0;
-
+std::mutex mutex;
 // The function we want to execute on the new thread.
 void task1(std::string name)
 {   
     while(TIME < 10) {
+    mutex.lock();
     TIME++;
     std::cout << name  << " -> " << TIME << '\n';
     std::this_thread::sleep_for(std::chrono::milliseconds(300));
+    mutex.unlock();
     }
 }
 
@@ -24,6 +26,7 @@ int main()
     // richiamo i thread prima di finire
     t1.join();
     t2.join();
+
     std::cout << TIME << '\n';
  
     
