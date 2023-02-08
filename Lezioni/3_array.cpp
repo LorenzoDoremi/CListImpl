@@ -1,12 +1,14 @@
 #include <iostream>
+
 int array[] = {1,2,3,4,5};
-int array2[5] = {1,2,3,4,5};
+int array2[5] = {10,20,30,40,50};
 int array3[10] = {};
 
 
 // non va. C++ non è molto furbo
 // int matrice[][] = {array,array2,array3};
-// int matrice_nuova[][5] = {array,array2};
+//int matrice_nuova[][5] = {array,array2};
+
 int* matrice[] = {array,array2,array3}; 
 
 
@@ -24,7 +26,10 @@ int matrice_corretta2[2][3] = {{1,2,3}, {4,5,6}};
 
 int main() {
 
-
-    std::cout << array3[0] << std::endl;
+    int k = matrice[1][2];
+    int* pointer = matrice[1];
+    
+    std::cout << *(pointer+2)  << std::endl;
+    std::cout << *(pointer+2)  << std::endl;
     return 0;
 }

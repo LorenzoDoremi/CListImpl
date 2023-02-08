@@ -40,12 +40,12 @@ int main()
     for (int el : array3)
     {
         std::cout << el << " ";
-        el = 0;
+        el = 9;
         counter++;
     }
      for (int el : array3)
     {   
-        // stampa sempre zero!   el = 0 non fa nulla. 
+        // stampa sempre zero!   el = 9 non fa nulla. 
         std::cout << el << " ";
        
         
