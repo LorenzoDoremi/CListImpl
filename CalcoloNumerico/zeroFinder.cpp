@@ -70,7 +70,8 @@ double regulaFalsi(double (f)(double), double a, double b, double interactions) 
   
     // calcolo coefficiente angolare retta passante.  fabs vs abs (float absolute)
     double coeff = ((f)(max) - (f)(min))/((max-min)); 
- 
+    
+    // cerco dove la retta incrocia l'asse X fabs(x) è il numero di passi in X che mi servono in avanti.
     double mid = min+fabs((f)(min)/coeff);
   
    
