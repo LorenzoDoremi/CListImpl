@@ -66,7 +66,7 @@ std::vector<int> ritornaVettore(int l ) {
 Node ritornaNodo() {
 
 
-   Node nodo = Node(10);
+   Node nodo = Node(555);
    return nodo;
 
 }
@@ -76,7 +76,14 @@ int* ritornaValoreNodo() {
 
    // di nuovo manca il new!
    Node nodo = Node(10, 666);
+  
    return &nodo.public_value;
+
+}
+
+Node* ritornaMemoriaNodo() {
+   Node* x = new Node(10,999);
+   return x;
 
 }
 
@@ -122,10 +129,14 @@ int main() {
     Node mioNodo = ritornaNodo();
     std::cout << mioNodo.getValue() << std::endl;
  
+
     // questo è sbagliato!!!!!!!! i puntatori sono odiosi...
     int* k = ritornaValoreNodo();
     std::cout << k << std::endl;
-
+    
+    Node* mem = ritornaMemoriaNodo();
+    Node xxx = *mem;
+    std::cout << mem->public_value << std::endl;
 
     return 0;
 }

@@ -30,9 +30,10 @@ int eseguiFunzione(int(f1)(int, int), int a, int b)
     return c;
 }
 
+
 int* ritornaArraySbagliato(int l)
 {
-
+    //L'array esiste solo all'interno di questa funzione. non potremo mai ritornarlo!
     int array[l];
     for (int i = 0; i < l; i++)
     {

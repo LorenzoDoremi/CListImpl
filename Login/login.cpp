@@ -44,8 +44,9 @@ void logscreen()
         std::string check;
 
           // cerco username e password. getline va a capo nelle righe
+          // assegno a check la riga corrente.
         while (std::getline(myfile, check))
-        {
+        {    // se il check è divero da npos, ovvero una forma di errore, mi fermo: ho trovato!
             if (check.find(username) != std::string::npos)
             {
 
